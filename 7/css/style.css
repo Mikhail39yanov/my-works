@@ -1,0 +1,61 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	background-color: gainsboro;
+}
+
+img {
+	max-width: 100%;
+}
+
+.container {
+	margin: 0 auto;
+	/* max-width: 1200px; */
+	padding: 30px 15px;
+}
+
+/* glob */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+}
+
+ul {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 0;
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* Таблица */
+.sort {
+	cursor: pointer;
+	transition: color .3s ease-in-out;
+}
+
+.sort:hover {
+	color: white;
+}
+
+.form-label {
+	cursor: pointer;
+}
