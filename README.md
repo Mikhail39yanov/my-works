@@ -26,4 +26,7 @@
 		<li>
 			9)Адаптивная, кроссбраузерная, доступная вёрстка макета Blanchard - художественная галерея - №9 Используемые технологии: HTML5, CSS3, чистый JavaScript, tabs, burger верстка на Flexbox без bootsrap, библиотеки: Slider Swipper, Jquery Accordion, fslightbox, choices, tippy, just-validate, inputmask, api-maps.yandex, animate.
 		</li>
+		<li>
+			10)
+		</li>
 	</ul>
