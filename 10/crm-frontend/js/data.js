@@ -11,17 +11,45 @@ const PHONE_ICON = '<svg class="tooltip__button-icon" width="16" height="16" vie
 const MAIL_ICON = '<svg class="tooltip__button-icon" width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.7" fill-rule="evenodd" clip-rule="evenodd" d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16ZM4 5.75C4 5.3375 4.36 5 4.8 5H11.2C11.64 5 12 5.3375 12 5.75V10.25C12 10.6625 11.64 11 11.2 11H4.8C4.36 11 4 10.6625 4 10.25V5.75ZM8.424 8.1275L11.04 6.59375C11.14 6.53375 11.2 6.4325 11.2 6.32375C11.2 6.0725 10.908 5.9225 10.68 6.05375L8 7.625L5.32 6.05375C5.092 5.9225 4.8 6.0725 4.8 6.32375C4.8 6.4325 4.86 6.53375 4.96 6.59375L7.576 8.1275C7.836 8.28125 8.164 8.28125 8.424 8.1275Z" fill="#9873FF"/></svg>';
 const MAIL_ADD_ICON = '<svg class="tooltip__button-icon" width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.7" fill-rule="evenodd" clip-rule="evenodd" d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16ZM3 8C3 5.24 5.24 3 8 3C10.76 3 13 5.24 13 8C13 10.76 10.76 13 8 13C5.24 13 3 10.76 3 8ZM9.5 6C9.5 5.17 8.83 4.5 8 4.5C7.17 4.5 6.5 5.17 6.5 6C6.5 6.83 7.17 7.5 8 7.5C8.83 7.5 9.5 6.83 9.5 6ZM5 9.99C5.645 10.96 6.75 11.6 8 11.6C9.25 11.6 10.355 10.96 11 9.99C10.985 8.995 8.995 8.45 8 8.45C7 8.45 5.015 8.995 5 9.99Z" fill="#9873FF"/></svg>';
 
-// export {
-// 	ARROW_ICON,
-// 	ALPHABET_ICON,
-// 	ADD_CLIENT_ICON,
-// 	ADD_CONTACTS_ICON,
-// 	EDIT_ICON,
-// 	DELETE_ICON,
-// 	DELETE_CONTACT_ICON,
-// 	VK_ICON,
-// 	FB_ICON,
-// 	PHONE_ICON,
-// 	MAIL_ICON,
-// 	MAIL_ADD_ICON,
-// };
+const CONTACTS = {
+	'Телефон': {
+		icon: PHONE_ICON,
+		prefix: 'tel:',
+		type: 'tel',
+	},
+	'Доп.телефон': {
+		icon: MAIL_ADD_ICON,
+		prefix: 'tel:',
+		type: 'tel',
+	},
+	'Email': {
+		icon: MAIL_ICON,
+		prefix: 'mailto:',
+		type: 'email',
+	},
+	'Vk': {
+		icon: VK_ICON,
+		prefix: 'https://vk.com/',
+		type: 'text',
+	},
+	'Facebook': {
+		icon: FB_ICON,
+		prefix: 'https://facebook.com/',
+		type: 'text',
+	},
+}
+export {
+	ARROW_ICON,
+	ALPHABET_ICON,
+	ADD_CLIENT_ICON,
+	ADD_CONTACTS_ICON,
+	EDIT_ICON,
+	DELETE_ICON,
+	DELETE_CONTACT_ICON,
+	VK_ICON,
+	FB_ICON,
+	PHONE_ICON,
+	MAIL_ICON,
+	MAIL_ADD_ICON,
+	CONTACTS,
+};

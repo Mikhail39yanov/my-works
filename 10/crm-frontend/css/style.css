@@ -121,6 +121,7 @@ ol {
 }
 
 .header__form {
+  position: relative;
   max-width: 581px;
   width: 100%;
 }
@@ -160,10 +161,47 @@ ol {
   opacity: 0;
 }
 
+.form-search__list {
+  display: none;
+  position: absolute;
+  z-index: 100;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: var(--white);
+}
+
+.form-search__list.form-search__list--active {
+  display: block;
+}
+
+.form-search__item {
+  padding: 5px 16px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--grey);
+  transition: background-color .3s linear, color .3s linear;
+  cursor: pointer;
+}
+
+.form-search__item:hover {
+  background-color: #EAEAEA;
+  color: var(--black);
+}
+
+.form-search__item--focused {
+  background-color: #EAEAEA;
+  color: var(--black);
+}
+
 /* Main */
 /* Hero */
 .table {
+  position: relative;
   margin: 0 auto;
+  z-index: 0;
   margin-bottom: 40px;
   width: calc(1186 / 1326 * 100%);
   max-width: 100%;
@@ -228,7 +266,16 @@ ol {
 
 .table__body-row {
   background-color: var(--white);
-  border-bottom: 1px solid rgba(200, 197, 209, 0.5);;
+  border-bottom: 1px solid rgba(200, 197, 209, 0.5);
+  transform: scale(1);
+  transition: transform .3s linear;
+}
+
+.table__body-row--find {
+  position: relative;
+  z-index: 10;
+  outline: 1px solid var(--light-purple);
+  transform: scale(1.05);
 }
 
 .table__body-cell {
@@ -596,7 +643,6 @@ ol {
   right: 0;
   bottom: 0;
   left: 0;
-  /* z-index: 100; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -618,6 +664,8 @@ ol {
 
 .modal {
   position: relative;
+  z-index: 100;
+  margin: 20px;
   padding: 24px 30px;
   max-width: 450px;
   width: 100%;
@@ -639,7 +687,6 @@ ol {
   height: 100%;
   opacity: 0;
   visibility: hidden;
-  /* background: rgb(51, 51, 51, 1); */
 }
 
 .modal._sending::after {
