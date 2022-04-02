@@ -1,0 +1,9 @@
+db.json
+.idea
+.DS_store
+node_modules
+ehthumbs.db
+Thumbs.db
+.env
+
+/dist
