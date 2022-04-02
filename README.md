@@ -1,5 +1,5 @@
 # Список работ: #
-1. [Статичная верстка макета Lagoona Hotel - №1](my-works/tree/master/1 "Статичная верстка макета Lagoona Hotel - №1")
+1. [Статичная верстка макета Lagoona Hotel - №1](../my-works/tree/master/1 "Статичная верстка макета Lagoona Hotel - №1")
 2. [Адаптивная, кроссбраузерная, доступная вёрстка макета Евклид - Проектные системы - №2](https://github.com/Mikhail39yanov/my-works/tree/master/2 "Адаптивная, кроссбраузерная, доступная вёрстка макета Евклид - Проектные системы - №2")
 3. [Адаптивная вёрстка LandingPage макета Курсы 3d моделирования - №3](https://github.com/Mikhail39yanov/my-works/tree/master/3 "Адаптивная вёрстка LandingPage макета Курсы 3d моделирования - №3")
 4. [Приложение Заметки(todo) - №4](https://github.com/Mikhail39yanov/my-works/tree/master/4 "Приложение Заметки(todo) - №4")
