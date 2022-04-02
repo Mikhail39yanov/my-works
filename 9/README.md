@@ -1,4 +1,5 @@
 # Курсовая работа "Создание одностраничного сайта для проекта "Blanchard - художественная галерея".
+Стэк:  HTML, CSS, чистый JavaScript, верстка на Flexbox без bootsrap, библиотеки: Slider Swipper, JQueryAccordion, fslightbox, choices, tippy, just-validate, inputmask, API Яндекс карты.
 
 В курсе "Профессия "Фронтенд разработчик с нуля до PRO", образовательной платформы Skillbox.ru
 
