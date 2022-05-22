@@ -1,0 +1,44 @@
+<section class="contacts" id="contacts">
+  <h2 class="contacts__subtitle subtitle">Контакты</h2>
+  <div class="contacts__items">
+    <div class="contacts__item map" id="map">
+      <div class="map__address" data-map-overlay>
+        <button class="map__button-open btn btn-reset" data-open-map-overlay></button>
+        <button class="map__button button-close btn btn-reset" data-close-map-overlay>
+          <svg class="button-close__icon">
+            <use xlink:href="img/icons/sprite.svg#close"></use>
+          </svg>
+        </button>
+        <div class="map__body">
+          <h2 class="map__subtitle map__subtitle--overlay subtitle">Студия “High pass”</h2>
+          <address class="map__address-text">
+            107045, Москва, Даев переулок, дом 41, бизнес-центр «Даев Плаза», этаж 8, офис № 82
+            <a class="map__phone phone" href="tel:+749542423532">
+              <span class="phone__icon"></span>
+              +7(495)42-423-532
+            </a>
+          </address>
+        </div>
+      </div>
+    </div>
+    <div class="contacts__item">
+      <h2 class="contacts__subtitle contacts__subtitle--form subtitle">Оставить заявку</h2>
+      <p class="contacts__descr">
+        Оставьте ваши данные, указав в графе “Комментарий” желаемые время и дату съемки или другого мероприятия
+      </p>
+      <form class="contacts__form form" id="form-contacts">
+        <label class="form__label">
+          <input class="form__input form__input--contacts" id="name" type="text" placeholder="Имя">
+        </label>
+        <label class="form__label">
+          <input class="form__input form__input--contacts" id="email-2" type="email" placeholder="E-mail">
+        </label>
+        <label class="form__label">
+          <textarea class="form__input form__input--contacts form__input--area" id="textarea" placeholder="Комментарий"></textarea>
+        </label>
+        <button class="form__button form__button--contacts btn btn-reset btn-primary">Отправить</button>
+      </form>
+    </div>
+  </div>
+</section>
+<div class="plug-3"></div>

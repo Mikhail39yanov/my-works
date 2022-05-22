@@ -1,0 +1,340 @@
+@import '_variables.scss';
+@import '_mixin.scss';
+@import '_extend.scss';
+
+.header {
+  position: relative;
+  grid-area: header;
+  padding: 24px 20px;
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 190px) minmax(auto, 970px) minmax(auto, 130px) 1fr;
+  align-items: center;
+  background-color: $colorBlack;
+
+  &__logo {
+    grid-column: 2 / 3;
+  }
+
+  &__menu {
+    grid-column: 3 / 4;
+  }
+
+  &__list {
+    @include setFontStyleTTFirsNeue();
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-evenly;
+    @extend %clearliststyles;
+  }
+
+  &__link {
+    color: $colorTextWhite;
+    font-weight: $fontWeightRegular;
+    transition: color .3s linear;
+
+    &:hover {
+      color: $colorOrange;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      background-color: $colorOrangeDark;
+    }
+  }
+
+
+  &__phone {
+    display: none;
+  }
+
+  &__search-button {
+    display: none;
+  }
+
+  &__burger {
+    display: none;
+  }
+
+  &__close {
+    display: none;
+  }
+
+  &__search-from {
+    display: none;
+  }
+}
+
+.search-button {
+  &__icon {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    grid-template-columns: 1fr minmax(auto, 190px) minmax(auto, 1075px) minmax(auto, 25px) 1fr;
+
+    &__social {
+      display: none;
+    }
+
+    &__search-button {
+      display: block;
+      width: 25px;
+      height: 25px;
+      justify-self: end;
+
+      & svg {
+        fill: #BCBCBC;
+        transition: fill .3s linear;
+      }
+
+      &:hover svg {
+        fill: $colorOrange;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &:focus-visible svg {
+        fill: $colorOrangeDark;
+      }
+    }
+
+    &__search-from.active {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(100%);
+    }
+  }
+
+  .search-from {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: 0;
+    transform: translateY(0);
+    margin-right: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 100%;
+    max-width: 345px;
+    height: 30px;
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    justify-content: space-between;
+    background-color: $colorBlack;
+    transition: visibility .3s linear, opacity .3s linear, transform .3s linear;
+
+
+    &__label {
+      width: 100%;
+    }
+
+    &__input {
+      @include setFontStyleRoboto();
+      width: 100%;
+      max-width: 310px;
+      height: 26px;
+      font-size: 14px;
+      font-weight: $fontWeightRegular;
+      background-color: $colorBlack;
+      border: none;
+      border-bottom: 1px solid $colorGreylight;
+      color: $colorTextWhite;
+      transition: border-color .3s linear;
+    }
+
+    &__input::placeholder {
+      @include setFontStyleTTFirsNeue();
+      color: $colorGreylight;
+    }
+
+    &__input:hover {
+      border-color: $colorOrange;
+    }
+
+    &__input:focus {
+      outline: none;
+    }
+
+    &__input:focus-visible {
+      border-color: $colorOrangeDark;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+
+    &__menu {
+      position: relative;
+      top: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-left: -20px;
+      margin-right: -20px;
+      grid-column: 1 / 5;
+      grid-row: 2;
+      align-self: center;
+      background-color: $colorGreyDeep;
+      height: 45px;
+    }
+
+    &__list {
+      height: 100%;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__search-button {
+      grid-column: 4;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+
+    &__logo {
+      position: relative;
+      z-index: 4;
+    }
+
+    &__menu {
+      position: relative;
+      z-index: 3;
+      top: 24px;
+    }
+
+    &__list {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      min-height: 100vh;
+      display: block;
+      overflow-y: auto;
+      background-color: $colorBlack;
+      margin-top: 114px;
+      padding: 20px 20px 125px 20px;
+      transform: translateY(-130%);
+      // opacity: 0;
+      // transform: translateY(0);
+      opacity: 1;
+      transition: transform .3s linear, opacity .3s linear;
+    }
+
+    &__list.active {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    &__menu.active {
+      background-color: $colorBlack;
+    }
+
+    &__burger.hidden {
+      display: none;
+    }
+
+    &__close.visible {
+      display: block;
+    }
+
+    &__list li:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    &__phone {
+      display: block;
+      margin-top: 250px;
+    }
+
+    &__close {
+      position: relative;
+      top: 10px;
+      display: none;
+      z-index: 3;
+    }
+
+    &__burger {
+      position: relative;
+      top: 14px;
+      display: block;
+      width: 20px;
+      height: 18px;
+      z-index: 3;
+    }
+
+    &__burger span {
+      position: absolute;
+      left: 0;
+      top: 8px;
+      background-color: $colorTextWhite;
+      width: 100%;
+      height: 2px;
+    }
+
+    &__burger::before,
+    &__burger::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      background-color: $colorTextWhite;
+      height: 2px;
+    }
+
+    &__burger::before {
+      top: 0;
+      width: 100%;
+    }
+
+    &__burger::after {
+      bottom: 0;
+      width: 50%;
+    }
+
+    &__search-button {
+      position: relative;
+      z-index: 3;
+      width: 20px;
+      height: 20px;
+    }
+
+    &__search-from.active {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .search-button__icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .search-from {
+    z-index: 5;
+    bottom: 0;
+    left: 0;
+    top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 100%;
+
+    &__input {
+      max-width: 100%;
+    }
+  }
+}

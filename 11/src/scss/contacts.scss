@@ -1,0 +1,223 @@
+@import '_variables.scss';
+@import '_mixin.scss';
+
+.contacts {
+  grid-area: contacts;
+  grid-column: 2/3;
+
+  &__items {
+    display: grid;
+    grid-template-columns: 1fr minmax(auto, 410px);
+    gap: 30px;
+  }
+
+  &__subtitle {
+    margin-bottom: 22px;
+  }
+
+  &__subtitle--form {
+    margin-bottom: 5px;
+    font-weight: $fontWeightRegular;
+    color: $colorBlack;
+  }
+
+  &__descr {
+    @include setFontStyleRoboto();
+    margin-bottom: 14px;
+    font-weight: $fontWeightRegular;
+    color: $colorGreyDark;
+  }
+
+  &__form {
+    display: grid;
+    gap: 20px;
+    justify-items: start;
+  }
+}
+
+.plug-3 {
+  position: relative;
+  z-index: 5;
+  grid-area: plug-3;
+  margin-left: -20px;
+  background-color: white;
+}
+
+[class*="ground-pane"] {
+  filter: grayscale(1);
+}
+
+.map {
+  position: relative;
+  min-height: 462px;
+
+  &__address {
+    position: absolute;
+    z-index: 3;
+    display: grid;
+    max-width: 410px;
+    align-items: center;
+    height: 100%;
+    padding: 25px 50px 25px 60px;
+    background: rgba(32, 32, 32, 0.85);
+    color: $colorGrey;
+    transition: transform .3s linear;
+  }
+
+  &__address.hidden {
+    // opacity: 0;
+    // visibility: hidden;
+    transform: translateX(-95%);
+  }
+
+  &__button {
+    position: absolute;
+    margin: 20px;
+    top: 0;
+    right: 0;
+  }
+
+  &__button-open {
+    position: absolute;
+    // top: 0;
+    height: 100%;
+    width: 20px;
+    right: 0;
+    display: none;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      background-color: #FFFFFF;
+      height: 2px;
+      opacity: 0.5;
+    }
+
+    &::before {
+      width: 100%;
+      top: 47%;
+      transform: rotate(70deg);
+    }
+
+    &::after {
+      width: 100%;
+      bottom: 49%;
+      transform: rotate(-72deg);
+    }
+  }
+
+  &__button-open.active {
+    display: block;
+  }
+
+  &__button-icon {
+    transform: rotate(90deg);
+    width: 30px;
+    height: 30px;
+  }
+
+  &__subtitle {
+    margin-bottom: 22px;
+  }
+
+  &__subtitle--overlay {
+    margin-bottom: 0;
+    color: $colorTextWhite;
+    font-weight: $fontWeightRegular;
+  }
+
+  &__address-text {
+    @include setFontStyleRoboto();
+    max-width: 300px;
+    font-style: normal;
+    line-height: 28px;
+    font-weight: $fontWeightRegular;
+  }
+
+}
+
+.form {
+  &__input--contacts {
+    max-width: 410px;
+    background-color: $colorGreylight;
+    color: $colorBlack;
+  }
+
+  &__input--contacts.is-invalid {
+    border: 1px solid $colorRed;
+  }
+
+  &__input--contacts::placeholder {
+    color: $colorGreyDark;
+  }
+
+  &__input--area {
+    resize: none;
+    min-height: 150px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .contacts {
+    &__items {
+      grid-template-columns: 1fr minmax(auto, 342px);
+    }
+  }
+
+  .map {
+    &__address {
+      bottom: 0;
+      padding: 25px 25px 21px 30px;
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+    }
+
+    &__address.hidden {
+      transform: translateX(-97%);
+    }
+
+    &__button-open {
+
+      &::before {
+        top: 43%;
+        transform: rotate(70deg);
+      }
+
+      &::after {
+        bottom: 45%;
+        transform: rotate(-72deg);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contacts {
+    &__items {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .map {
+    min-height: 472px;
+
+    &__subtitle {
+      margin-bottom: 10px;
+    }
+
+    &__address-text {
+      max-width: 100%;
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    &__phone {
+      display: block;
+      margin-top: 11px;
+    }
+  }
+
+}

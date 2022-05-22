@@ -1,0 +1,28 @@
+@import '_variables.scss';
+@import '_mixin.scss';
+
+.wrapper {
+  display: grid;
+  // max-width: 1290px;
+  // margin: 0 auto;
+  height: 100vh;
+  // min-height: 100%;
+  grid-template-rows: minmax(80px, auto) 1fr minmax(106px, auto);
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    grid-template-rows: minmax(115px, auto) 1fr minmax(106px, auto);
+  }
+}
+
+@media (max-width: 576px) {
+  .wrapper {
+    grid-template-rows: minmax(115px, auto) 1fr minmax(185px, auto);
+  }
+}

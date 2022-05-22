@@ -1,0 +1,41 @@
+@import '_variables.scss';
+@import '_mixin.scss';
+
+.additional-section {
+
+  &__button {
+    position: fixed;
+    z-index: 1;
+    top: 85%;
+    right: 5%;
+    width: 50px;
+    height: 50px;
+    border: 1px solid transparent;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s linear, visibility .3s linear;
+
+    & svg {
+      fill: #ECECEC;
+      transition: fill .3s linear;
+    }
+
+    &:hover svg {
+      fill: $colorOrange;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__button.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__icon {
+    width: 30px;
+    height: 30px;
+  }
+}

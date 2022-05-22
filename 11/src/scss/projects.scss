@@ -1,0 +1,288 @@
+@import '_variables.scss';
+@import '_mixin.scss';
+
+.projects {
+  grid-area: projects;
+  grid-column: 2/3;
+
+  &__subtitle {
+    color: $colorBlack;
+    margin-bottom: 12px;
+  }
+
+  &__list {
+    @include clearListStyles();
+    display: grid;
+    grid-template-columns: repeat(3, minmax(auto, 190px)) repeat(2, minmax(auto, 300px));
+    grid-auto-flow: dense;
+    gap: 30px;
+  }
+
+  &__item {
+    overflow: hidden;
+  }
+
+  &__item--big-1 {
+    grid-column: span 2;
+  }
+
+  &__item--big-2 {
+    grid-column: span 3;
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &__hashtag {
+    margin: 7px;
+  }
+
+  &__img {
+    position: relative;
+    // height: 100%;
+  }
+
+  &__img--big-1,
+  &__img--big-2 {
+    height: 100%;
+  }
+
+  &__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__body {
+    @include setFontStyleRoboto();
+    margin-top: 18px;
+    margin-bottom: 13px;
+    line-height: 22px;
+    height: 66px;
+    font-weight: $fontWeightRegular;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__footer {
+    margin-top: auto;
+  }
+
+  &__icon--dark {
+    background-image: url('../img/calendar-dark.svg');
+  }
+
+  &__icon--light {
+    background-image: url('../img/calendar-light.svg');
+  }
+
+  &__icon--dark,
+  &__icon--light {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__date-text {
+    @include setFontStyleRoboto();
+    color: $colorGreyDark;
+    font-weight: $fontWeightRegular;
+  }
+
+  &__img-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // height: auto;
+    padding: 22px 15px 30px 30px;
+  }
+
+  &__heading {
+    margin-bottom: 6px;
+  }
+
+  &__body--big-1,
+  &__body--big-2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: $colorTextWhite;
+    overflow: visible;
+  }
+
+  &__date-text--color {
+    color: $colorTextWhite;
+  }
+
+  &__text--big-1,
+  &__text--big-2 {
+    max-width: 292px;
+    line-height: 22px;
+  }
+
+  &__button {
+    @include setTransparentButton(15px 22px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .projects {
+    &__list {
+      grid-template-columns: minmax(auto, 218px) repeat(3, minmax(auto, 94px)) repeat(1, minmax(auto, 466px));
+      gap: 24px 30px;
+    }
+
+    &__list>li:nth-child(2) {
+      grid-column: span 2;
+    }
+
+    &__list>li:nth-child(3) {
+      grid-column: span 2;
+    }
+
+    &__list>li:nth-child(7) {
+      grid-column: span 2;
+    }
+
+    &__item--big-1 {
+      grid-column: span 4;
+    }
+
+    &__item--big-2 {
+      grid-column: 3 / span 3;
+      grid-row: 3;
+    }
+  }
+
+  .card {
+    &__body {
+      overflow: visible;
+      overflow: hidden;
+    }
+
+    &__body--big-1,
+    &__body--big-2 {
+      overflow: visible;
+    }
+
+    &__img--1 {
+      height: 65%;
+    }
+
+    &__img--3 {
+      height: 65%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .projects {
+    &__list {
+      grid-template-columns: repeat(6, minmax(auto, 94px));
+    }
+
+    &__list>li:nth-child(1) {
+      grid-column: span 2;
+    }
+
+    &__list>li:nth-child(2) {
+      grid-column: span 2;
+    }
+
+    &__list>li:nth-child(3) {
+      grid-column: span 2;
+    }
+
+    &__list>li:nth-child(6) {
+      grid-column: span 3;
+    }
+
+    &__list>li:nth-child(7) {
+      grid-column: span 3;
+    }
+
+    &__item--big-1 {
+      grid-column: span 6;
+    }
+
+    &__item--big-2 {
+      grid-column: span 6;
+      grid-row: 4;
+    }
+  }
+
+  .card {
+    &__img--1 {
+      height: auto;
+    }
+
+    &__img--3 {
+      height: auto;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .projects {
+    &__list {
+      grid-template-columns: repeat(1, minmax(auto, 1fr));
+    }
+
+    &__list>li:nth-child(1) {
+      grid-column: span 1;
+    }
+
+    &__list>li:nth-child(2) {
+      grid-column: span 1;
+    }
+
+    &__list>li:nth-child(3) {
+      grid-column: span 1;
+    }
+
+    &__list>li:nth-child(6) {
+      grid-column: span 1;
+    }
+
+    &__list>li:nth-child(7) {
+      grid-column: span 1;
+    }
+
+    &__item--big-1 {
+      grid-column: span 1;
+    }
+
+    &__item--big-2 {
+      grid-column: span 1;
+    }
+  }
+
+  .card {
+    &__img-overlay {
+      justify-content: flex-end;
+    }
+
+    &__body {
+      height: auto;
+    }
+
+    &__footer {
+      margin-top: 20px;
+    }
+
+    &__button {
+      @include setTransparentButton(12px 22px);
+    }
+  }
+}

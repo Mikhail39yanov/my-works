@@ -1,0 +1,43 @@
+@import '_variables.scss';
+
+@mixin clearListStyles {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin setStyleHashtag {
+  @include setFontStyleRoboto();
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  right: 0;
+  padding: 6px 15px;
+  font-size: 14px;
+  font-weight: $fontWeightRegular;
+  color: $colorTextWhite;
+  background-color: $colorBackgroundHashtag;
+}
+
+@mixin setFontStyleRoboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+@mixin setFontStyleTTFirsNeue {
+  font-family: 'TTFirsNeue', sans-serif;
+}
+
+@mixin setOrangeButton($p) {
+  display: inline-block;
+  padding: $p;
+  color: $colorTextWhite;
+  background-color: $colorOrange;
+}
+
+@mixin setTransparentButton($p) {
+  display: inline-block;
+  padding: $p;
+  color: $colorTextWhite;
+  background-color: transparent;
+  border: 3px solid $colorOrange;
+}

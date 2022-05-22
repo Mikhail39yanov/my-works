@@ -1,0 +1,248 @@
+@import '_variables.scss';
+@import '_mixin.scss';
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn {
+  @include setFontStyleRoboto();
+  font-weight: $fontWeightBold;
+}
+
+.btn-reset {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.subtitle {
+  @include setFontStyleTTFirsNeue();
+  font-weight: $fontWeightBold;
+}
+
+.logo {
+  display: block;
+  max-width: 190px;
+  max-height: 30px;
+}
+
+.form {
+  &__label {
+    position: relative;
+    width: 100%;
+  }
+
+  &__input {
+    @include setFontStyleRoboto();
+    width: 100%;
+    padding: 15px 23px;
+    border: 1px solid transparent;
+    color: $colorTextWhite ;
+
+    &:hover::placeholder {
+      color: $colorOrange;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      border: 1px solid $colorOrange;
+    }
+  }
+
+  &__input::placeholder {
+    @include setFontStyleRoboto();
+    transition: color .3s linear;
+  }
+
+  &__button {
+    @include setOrangeButton(12px 22px);
+  }
+}
+
+.hashtag {
+  @include setStyleHashtag();
+}
+
+.social {
+  @include clearListStyles();
+  grid-column: 4 / 5;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+
+  &__link {
+    display: block;
+    height: 30px;
+
+    & svg {
+      fill: $colorGrey;
+      transition: fill .3s linear;
+    }
+
+    &:hover svg {
+      fill: $colorOrange;
+    }
+
+    & {
+      outline: none;
+    }
+
+    &:focus-visible svg {
+      fill: $colorOrangeDark;
+    }
+  }
+
+  &__insta,
+  &__fb,
+  &__vk {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.phone {
+  color: $colorOrange;
+
+  &__icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('../img/phone.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translateY(2px);
+  }
+}
+
+.disable-scroll {
+  position: fixed;
+  overflow: hidden;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.button-close {
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  & svg {
+    fill: #666666;
+    transition: fill .3s linear;
+  }
+
+  &:hover svg {
+    fill: $colorOrange;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible svg {
+    fill: $colorOrangeDark;
+  }
+
+}
+
+.btn-primary {
+  transition: background-color .3s linear;
+  border: 2px solid transparent;
+
+  &:hover {
+    background-color: $colorOrangeDark;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    border: 2px solid $colorOrangeDark;
+  }
+}
+
+.btn-second {
+  transition: background-color .3s linear, border .3s linear;
+
+  &:hover {
+    background-color: $colorOrange;
+    border: 3px solid transparent;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    background-color: $colorOrangeDark;
+    border: 3px solid $colorOrange;
+  }
+}
+
+
+
+@media (max-width: 1024px) {
+  .logo {
+    max-width: 166px;
+    max-height: 26px;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo {
+    max-width: 112px;
+    max-height: 18px;
+  }
+
+  .btn {
+    font-size: 14px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  .form {
+    &__button {
+      @include setOrangeButton(10px 22px);
+    }
+  }
+}

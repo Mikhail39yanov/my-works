@@ -1,0 +1,76 @@
+<header class="header">
+  <a class="header__logo logo">
+    <img src="img/logo.svg" alt="Лого">
+  </a>
+  <nav class="header__menu">
+    <ul class="header__list fix-block" data-menu>
+      <li>
+        <a href="#" class="header__link" data-link="aboutus">О студии</a>
+      </li>
+      <li>
+        <a href="#" class="header__link" data-link="projects">Наши проекты</a>
+      </li>
+      <li>
+        <a href="#" class="header__link" data-link="contacts">Услуги</a>
+      </li>
+      <li>
+        <a href="#" class="header__link" data-link="master">Мастер-классы</a>
+      </li>
+      <li>
+        <a href="#" class="header__link" data-link="contacts">Контакты</a>
+      </li>
+      <li class="header__phone">
+        <a class="phone" href="tel:+749542423532">
+          <span class="phone__icon"></span>
+          +7(495)42-423-532
+        </a>
+      </li>
+    </ul>
+    <button class="header__burger burger btn btn-reset" data-open-menu aria-label="Открыть меню">
+      <span></span>
+    </button>
+    <button class="header__close button-close btn btn-reset" data-close-menu aria-label="Закрыть меню">
+      <svg class="button-close__icon">
+        <use xlink:href="img/icons/sprite.svg#close"></use>
+      </svg>
+    </button>
+  </nav>
+  <ul class="header__social social">
+    <li>
+      <a href="#" class="social__link" aria-label="Cсылка социальная сеть Instagram">
+        <svg class="social__insta">
+          <use xlink:href="img/icons/sprite.svg#insta"></use>
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="social__link" aria-label="Cсылка социальная сеть Facebook">
+        <svg class="social__fb">
+          <use xlink:href="img/icons/sprite.svg#fb"></use>
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="social__link" aria-label="Cсылка социальная сеть Vkontakte">
+        <svg class="social__vk">
+          <use xlink:href="img/icons/sprite.svg#vk"></use>
+        </svg>
+      </a>
+    </li>
+  </ul>
+  <button class="header__search-button search-button btn btn-reset" data-search-open aria-label="Поиск по сайту">
+    <svg class="search-button__icon">
+      <use xlink:href="img/icons/sprite.svg#search"></use>
+    </svg>
+  </button>
+  <form class="header__search-from search-from" data-search-from>
+    <label class="search-from__label">
+      <input class="search-from__input" type="text" placeholder="Что будем иcкать?">
+    </label>
+    <button class="search-from__button button-close btn btn-reset" data-search-close aria-label="Закрыть поиск по сайу">
+      <svg class="button-close__icon">
+        <use xlink:href="img/icons/sprite.svg#close"></use>
+      </svg>
+    </button>
+  </form>
+</header>

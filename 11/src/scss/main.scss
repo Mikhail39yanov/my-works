@@ -1,0 +1,13 @@
+.main {
+  grid-area: main;
+  padding: 34px 20px 68px;
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 1290px) 1fr;
+  // grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "master master master"
+    "plug-1 aboutus plug-2"
+    "projects projects projects"
+    "plug-3 contacts contacts";
+  gap: 68px 0px;
+}
