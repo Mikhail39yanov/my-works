@@ -1,0 +1,235 @@
+@import '_variables.scss';
+@import '_mixin.scss';
+
+.result {
+  display: grid;
+  height: 100%;
+  background-color: $colorBlack;
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr repeat(2, minmax(auto, 545px)) 1fr;
+    padding-top: 70px;
+    gap: 20px;
+  }
+
+  &__body {
+    grid-column: 2 / 3;
+    padding-top: 250px;
+    max-width: 420px;
+  }
+
+  &__decor {
+    padding-top: 250px;
+  }
+
+  &__line {
+    background-color: $colorBlackText;
+  }
+
+  &__text-mini {
+    margin-bottom: 21px;
+    color: $colorBlackText;
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+    color: $colorWhiteText;
+  }
+
+  &__text {
+    color: $colorWhiteText;
+  }
+
+  &__btn {
+    margin-top: 20px;
+    color: $colorWhiteText;
+
+    transition: background-color .3s linear, color .3s linear;
+
+    &:hover {
+      background-color: $colorWhite;
+      color: $colorBlack;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      background-color: $colorWhite;
+      color: $colorBlack;
+    }
+
+
+    &:hover svg {
+      stroke: $colorBlack;
+    }
+
+    &:focus-visible svg {
+      stroke: $colorBlack;
+    }
+  }
+
+  &__icon {
+    stroke: $colorWhiteText;
+  }
+
+  &__slider-result {
+    grid-column: 3 / 5;
+    display: grid;
+  }
+}
+
+.slider-result {
+  position: relative;
+  display: grid;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  &__wrapper {
+    display: flex;
+    height: 450px;
+    width: 100%;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__image img {
+    @include setImageSize();
+  }
+
+  &__icon,
+  &__icon {
+    stroke: $colorWhiteText;
+  }
+
+  &__button-wrapper {
+    position: relative;
+    left: 76%;
+    margin-top: 16px;
+    transform: translate(-50%, 0px);
+  }
+
+  &__btn {
+    display: none;
+  }
+
+  &__button-prev,
+  &__button-next {
+    transition: background-color .3s linear;
+
+    &:hover {
+      background-color: $colorWhite;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      background-color: $colorWhite;
+    }
+
+    & svg {
+      transition: stroke .3s linear;
+    }
+
+    &:hover svg {
+      stroke: $colorBlack;
+    }
+
+    &:focus-visible svg {
+      stroke: $colorBlack;
+    }
+  }
+
+  &__scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width:768px) {
+  .result {
+
+    &__content {
+      display: grid;
+      grid-template-columns: 1fr minmax(auto, 768px) 1fr;
+      gap: 20px 0px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 70px;
+    }
+
+    &__body {
+      grid-column: 2 / 3;
+      padding: 0;
+    }
+
+    &__slider-result {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+    }
+
+    &__text-mini {
+      margin-bottom: 18px;
+      color: #525252;
+    }
+
+    &__subtitle {
+      margin-bottom: 18px;
+    }
+  }
+
+  .slider-result {
+
+    &__button-prev,
+    &__button-next {
+      display: none;
+    }
+
+    &__btn {
+      display: inline-grid;
+      color: #F7F7F7;
+    }
+
+    &__button-wrapper {
+      margin-top: 50px;
+    }
+
+    &__scrollbar {
+      position: absolute;
+      bottom: 66px;
+      right: 0;
+      display: block;
+      height: 4px;
+      width: 100%;
+      background-color: #171717;
+    }
+
+    &__drag-scroll {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 4px;
+      background-color: $colorWhite;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .slider-result {
+    &__wrapper {
+      height: 250px;
+    }
+
+    &__button-wrapper {
+      left: 68%;
+    }
+  }
+}

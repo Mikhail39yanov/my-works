@@ -1,0 +1,249 @@
+@import '_variables.scss';
+@import '_mixin.scss';
+
+.header {
+  position: fixed;
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 110px) minmax(auto, 830px) minmax(auto, 170px) 1fr;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  background-color: transparent;
+  padding-left: 20px;
+  padding-right: 20px;
+  transform: translate(0px, -100%);
+
+  &__logo {
+    grid-column: 2/3;
+    @include setFontStyleOpenSans();
+    font-size: 20px;
+    font-weight: $fontWeightHeavy;
+    transition: color .3s linear;
+  }
+
+  &__menu {
+    grid-column: 3/4;
+  }
+
+  &__link {
+    @include setFontStyleArimo();
+    font-weight: $fontWeightRegular;
+    font-size: 20px;
+    grid-column: 4/5;
+    justify-self: end;
+    transition: color .3s linear;
+  }
+
+  &__burger {
+    display: none;
+  }
+
+  &__link--mobile {
+    display: none;
+  }
+}
+
+[data-header-link]._light {
+  &:hover {
+    color: $colorGold;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    background-color: $colorOrange;
+  }
+}
+
+[data-header-link]._black {
+  &:hover {
+    color: $colorGold;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    background-color: $colorOrange;
+  }
+}
+
+.menu {
+  display: grid;
+  height: 100%;
+  align-items: center;
+
+  &__list {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-evenly;
+    @include clearListStyles();
+  }
+
+  &__link {
+    @include setFontStyleNotoSans();
+    font-size: 14px;
+    font-weight: $fontWeightRegular;
+    transition: color .3s linear;
+  }
+}
+
+[data-header-link]._light {
+  color: $colorWhiteText;
+}
+
+[data-header-link]._dark {
+  color: $colorBlackText;
+}
+
+[data-header-link]._light span,
+[data-header-link]._light::before,
+[data-header-link]._light::after {
+  background-color: $colorWhiteText;
+}
+
+@media (max-width: 850px) {
+  .header {
+    box-shadow: 0px 4px 16px rgba(160, 160, 160, 0.07);
+
+    &__link {
+      display: none;
+    }
+
+    &__burger {
+      grid-column: 4/5;
+      justify-self: end;
+      position: relative;
+      display: block;
+      width: 20px;
+      height: 18px;
+      z-index: 3;
+    }
+
+    &__burger span {
+      position: absolute;
+      left: 0;
+      top: 8px;
+      background-color: $colorBlackText;
+      width: 100%;
+      height: 2px;
+      transition: background-color .3s linear, transform .3s linear;
+    }
+
+    &__burger::after,
+    &__burger::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      background-color: $colorBlackText;
+      height: 2px;
+      transition: background-color .3s linear, transform .3s linear;
+    }
+
+    &__burger::before {
+      top: 0;
+      width: 100%;
+    }
+
+    &__burger::after {
+      bottom: 0;
+      width: 100%;
+    }
+
+    &__burger._active:before {
+      transform: rotate(45deg);
+      top: 8px;
+    }
+
+    &__burger._active::after {
+      transform: rotate(-45deg);
+      bottom: 8px;
+    }
+
+    &__burger._active span {
+      transform: scale(0);
+    }
+
+    &__link--mobile {
+      grid-column: 1 / 5;
+      justify-self: center;
+      margin-top: 40px;
+      color: $colorWhite;
+    }
+
+    &__link--mobile._active {
+      display: block;
+    }
+  }
+
+  .menu {
+    grid-template-columns: 1fr;
+    opacity: 0;
+    visibility: hidden;
+    grid-column: 1 / 5;
+    align-items: start;
+    position: absolute;
+    top: 0;
+    left: -20px;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 100vw;
+    height: 100%;
+    min-height: 100vh;
+    overflow-y: auto;
+    background-color: $colorBlack;
+    padding: 100px 20px 125px 20px;
+    transition: opacity .3s linear, visibility .3s linear;
+
+    &__list {
+      grid-auto-flow: row;
+      gap: 40px;
+      justify-items: center;
+    }
+
+    &__link {
+      color: $colorWhite;
+    }
+  }
+
+  .menu._active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  [data-open-menu]._active span,
+  [data-open-menu]._active::before,
+  [data-open-menu]._active::after {
+    background-color: $colorWhite  !important;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .header {
+    position: relative;
+    transform: translate(0%, 0%);
+  }
+
+  .menu__link._light {
+    color: $colorWhite;
+  }
+
+  [data-open-menu]._light span,
+  [data-open-menu]._light::before,
+  [data-open-menu]._light::after {
+    background-color: $colorBlackText;
+  }
+
+  [data-header-logo]._light {
+    color: $colorBlackText;
+  }
+
+}
