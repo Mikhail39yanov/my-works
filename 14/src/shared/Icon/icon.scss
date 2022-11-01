@@ -1,0 +1,31 @@
+.s16 {
+  width: 16px;
+  height: 16px;
+}
+
+.s18 {
+  width: 18px;
+  height: 18px;
+}
+
+.s30 {
+  width: 30px;
+  height: 30px;
+}
+
+.s50 {
+  width: 50px;
+  height: 50px;
+}
+
+@media all and (min-width: 320px) and (max-width: 1023px) {
+  .m14 {
+    width: 14px;
+    height: 14px;
+  }
+
+  .m30 {
+    width: 30px;
+    height: 30px;
+  }
+}

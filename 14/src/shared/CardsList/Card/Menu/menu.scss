@@ -1,0 +1,80 @@
+@import '../../../../scss/variables';
+@import '../../../../scss/mixin';
+
+.menuButton {
+  width: 31px;
+  height: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(90deg);
+  border-radius: 31px;
+
+  &:active {
+    background-color: rgba(51, 51, 51, 0.1);
+  }
+
+  @include atLaptop1024 {
+    align-self: center;
+    transform: unset;
+  }
+
+  @include atDesktop1540 {
+    &:hover {
+      background-color: rgba(51, 51, 51, 0.1);
+    }
+  }
+}
+
+.dropdown {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  background-color: $white;
+  padding: 0 20px;
+  z-index: 100;
+}
+
+@media all and (max-width: 1024px) {
+
+  .dropdown>li:nth-child(1) {
+    display: none;
+  }
+
+  .dropdown>li:nth-child(2) {
+    display: none;
+  }
+
+  .dropdown>li:nth-child(4) {
+    display: none;
+  }
+}
+
+.menuItem {
+  position: relative;
+  padding: 12px 0px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  width: 100%;
+}
+
+.menuItem * {
+  color: $greyC4;
+}
+
+.closeButton {
+  background-color: $greyD9;
+  padding: 12px 54px;
+  margin: auto -20px;
+  border-radius: 0 0 3px 3px;
+  text-align: center;
+}
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background-color: $greyEC;
+}

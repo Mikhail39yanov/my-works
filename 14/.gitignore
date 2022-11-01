@@ -1,0 +1,8 @@
+node_modules
+dist
+.idea
+
+ehthumbs.db
+Thumbs.db
+# .env
+.DS_Store

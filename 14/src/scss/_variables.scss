@@ -1,0 +1,14 @@
+$whiteLightness: 100%;
+$black: #333333;
+$orange: #cc6633;
+$green: #A4CC33;
+$white: hsl(0, 0%, $whiteLightness);
+$grayF4: hsl(0, 0%, calc($whiteLightness - 4%));
+$greyF3: hsl(0, 0%, calc($whiteLightness - 5%));
+$greyEC: hsl(0, 0%, calc($whiteLightness - 7%));
+$greyE5: hsl(0, 0%, calc($whiteLightness - 10.2%));
+$greyD9: hsl(0, 0%, calc($whiteLightness - 15%));
+$greyC4: hsl(0, 0%, calc($whiteLightness - 23%));
+$greyAD: hsl(0, 0%, calc($whiteLightness - 32.16%));
+$grey99: hsl(0, 0%, calc($whiteLightness - 40%));
+$grey66: hsl(0, 0%, calc($whiteLightness - 60%));

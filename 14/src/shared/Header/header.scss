@@ -1,0 +1,14 @@
+@import '../../scss/mixin.scss';
+
+.header {
+  @include atLaptop1024 {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: 40px;
+  }
+
+  @include atDesktop1540 {
+    padding: 67px 0;
+  }
+}

@@ -1,0 +1,29 @@
+// =================================================
+// userLink.scss
+@import '../../../../../../scss/variables';
+@import '../../../../../../scss/mixin';
+
+.userLink {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  height: 20px;
+
+  @include atDesktop1540 {
+    &:hover a {
+      text-decoration: underline;
+    }
+  }
+}
+
+.avatar {
+  border-radius: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.username {
+  color: $orange;
+  position: relative;
+  z-index: 1;
+}

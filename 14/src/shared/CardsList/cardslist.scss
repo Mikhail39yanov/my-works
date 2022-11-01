@@ -1,0 +1,50 @@
+@import '../../scss/mixin';
+@import '../../scss/variables';
+
+.cardsList {
+  @include atLaptop1024 {
+    padding: 40px 0;
+  }
+}
+
+// loader
+.ldsDualRing {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.ldsDualRing:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid $orange;
+  border-color: $orange transparent $orange transparent;
+  animation: ldsDualRing 1.2s linear infinite;
+}
+@keyframes ldsDualRing {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// button load more
+.buttonLoadMore {
+  padding: 12px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid $orange;
+  border-radius: 10px;
+  transition: color .2s linear, background-color .2s linear;
+
+  &:hover {
+    background-color: $orange;
+    color: $white;
+  }
+}

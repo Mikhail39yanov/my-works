@@ -1,0 +1,30 @@
+@import '../../../../../scss/variables';
+@import '../../../../../scss/mixin';
+
+.metaData {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  font-size: 10px;
+  line-height: 12px;
+
+  @include atLaptop1024 {
+    flex-flow: row-reverse nowrap;
+    justify-content: flex-end;
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+.publishedLabel {
+  display: none;
+
+  @include atLaptop1024 {
+    display: inline;
+  }
+}
+
+.createdAt,
+.createdAt span {
+  color: $grey99;
+}

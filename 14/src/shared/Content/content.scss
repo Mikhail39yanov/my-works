@@ -1,0 +1,11 @@
+@import '../../scss/variables';
+@import '../../scss/mixin';
+
+.content {
+  overflow: hidden;
+
+  @include atLaptop1024 {
+    background-color: $white;
+    border-radius: 7px 7px 0 0;
+  }
+}

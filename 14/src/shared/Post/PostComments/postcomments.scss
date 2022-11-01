@@ -1,0 +1,108 @@
+@import '../../../scss/variables';
+
+.modalDropdown {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.menuItem {
+  padding: 12px 0;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.menuItem * {
+  color: $greyC4;
+}
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background-color: $greyEC;
+}
+
+.sort {
+  display: flex;
+}
+
+.buttonSort {
+  display: flex;
+  align-items: center;
+  color: $orange;
+}
+
+.karmaCounter>*+* {
+  padding: 0 0 0 4px;
+}
+
+.karmaValue {
+  color: $greyC4;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+svg.down {
+  transform: rotate(180deg);
+}
+
+@media all and (min-width: 1024px) {
+  .karmaCounter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+  }
+
+  .karmaCounter>*+* {
+    padding: 7px 0 0;
+  }
+
+  .karmaValue {
+    font-size: 14px;
+    line-height: 16px;
+    color: $black;
+  }
+}
+
+@media all and (min-width: 1540px) {
+  .karmaCounter>button.up:hover>svg>path {
+    fill: $green;
+  }
+
+  .karmaCounter>button.down:hover>svg>path {
+    fill: $orange;
+  }
+}
+
+.dividerHorizontal {
+  position: relative;
+  left: 50%;
+  bottom: 0;
+  height: 100%;
+  width: 3px;
+  background-color: $greyD9;
+  transform: translateX(-50%);
+}
+
+.theme {
+  position: relative;
+
+  & span {
+    position: relative;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    width: calc(100% + 10px);
+    height: calc(100% + 8px);
+    transform: translate(-50%, -50%);
+    background-color: $greyD9;
+  }
+}

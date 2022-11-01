@@ -1,0 +1,123 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixin';
+
+.card {
+  position: relative;
+  background-color: $white;
+  border-radius: 7px;
+  padding: 20px 20px 10px;
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 20px;
+
+  &:hover h2 a,
+  &:focus-within h2 a {
+    color: $orange;
+  }
+
+
+  @include atLaptop1024 {
+    background-color: transparent;
+    flex-flow: row nowrap;
+    max-height: 107px;
+    margin-bottom: 0;
+  }
+
+  @include atDesktop1540 {
+    padding: 20px 60px;
+    max-height: 147px;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-within {
+      outline: 1px solid $greyD9;
+    }
+  }
+}
+
+.card>* {
+  flex: 1 1 100%;
+
+  @include atLaptop1024 {
+    flex: 0 0;
+  }
+}
+
+.card>*+* {
+  padding: 13px 0 0;
+
+  @include atLaptop1024 {
+    padding: 0;
+  }
+}
+
+.preview {
+  max-height: 178px;
+  margin: 0 -20px;
+
+  @include atLaptop1024 {
+    flex-basis: 190px;
+    order: 0;
+    margin: 0;
+  }
+}
+
+.previewImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu {
+  position: absolute;
+  top: 17px;
+  right: 15px;
+  padding: 0;
+
+  @include atLaptop1024 {
+    position: relative;
+    order: 2;
+    display: flex;
+    align-items: center;
+    flex: 0 0;
+    top: unset;
+    right: unset;
+    margin: 0 0 0 auto;
+  }
+}
+
+.menuItemsList {
+  padding: 0 20px;
+}
+
+.controls {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+
+  @include atLaptop1024 {
+    order: 3;
+    flex: 0 0;
+    margin: 0 0 0 24px;
+  }
+}
+
+.commentsButton {
+  display: flex;
+  align-items: normal;
+
+  @include atLaptop1024 {
+    display: none;
+  }
+}
+
+.commentsButton * {
+  color: $greyC4;
+}
+
+.commentsNumber {
+  padding: 0 0 0 6px;
+  font-size: 12px;
+  line-height: 14px;
+}

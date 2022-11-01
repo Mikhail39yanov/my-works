@@ -1,0 +1,45 @@
+@import '../../../../scss/variables';
+@import '../../../../scss/mixin';
+
+.karmaCounter>*+* {
+  padding: 0 0 0 4px;
+
+  @include atLaptop1024 {
+    padding: 7px 0 0;
+  }
+}
+
+.karmaValue {
+  color: $greyC4;
+  font-size: 12px;
+  line-height: 14px;
+
+  @include atLaptop1024 {
+    font-size: 14px;
+    line-height: 16px;
+    color: $black;
+  }
+}
+
+@include atLaptop1024 {
+  .karmaCounter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+  }
+}
+
+@include atDesktop1540 {
+  .karmaCounter>button.up:hover>svg>path {
+    fill: $green;
+  }
+
+  .karmaCounter>button.down:hover>svg>path {
+    fill: $orange;
+  }
+}
+
+svg.down {
+  transform: rotate(180deg);
+}

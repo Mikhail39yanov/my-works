@@ -1,0 +1,31 @@
+@import '../../../../scss/variables';
+@import '../../../../scss/mixin';
+
+.textContent {
+  display: flex;
+  flex-flow: row wrap;
+
+  @include atLaptop1024 {
+    flex-basis: 540px;
+    order: 1;
+    margin: 0 0 0 38px;
+    flex-flow: column-reverse nowrap;
+    justify-content: center;
+  }
+
+  @include atDesktop1540 {
+    flex-basis: 672px;
+  }
+}
+
+.textContent>* {
+  flex: 1 1 100%;
+
+  @include atLaptop1024 {
+    flex: 0 0;
+  }
+}
+
+.textContent>*+* {
+  padding: 7px 0 0;
+}

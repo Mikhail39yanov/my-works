@@ -1,0 +1,25 @@
+@import '../../../../scss/variables';
+@import '../../../../scss/mixin';
+
+.actions {
+  display: flex;
+  flex-flow: row nowrap;
+
+  @include atLaptop1024 {
+    display: none;
+  }
+}
+
+.actions>*+* {
+  margin: 0 0 0 13px;
+}
+
+.shareButton {
+  width: 20px;
+  height: 20px;
+}
+
+.saveButton {
+  width: 20px;
+  height: 20px;
+}
