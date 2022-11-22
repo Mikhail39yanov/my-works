@@ -6,7 +6,7 @@
 
 [Приложение список карточек - №15](https://github.com/Mikhail39yanov/antipoff-group "Приложение список карточек - №15")
 </li>
-<li>
+
 <li>
 
 [Приложение Reddit - №14](https://github.com/Mikhail39yanov/my-works/tree/master/14 "Приложение Reddit - №14")
