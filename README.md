@@ -3,7 +3,7 @@
 <ol reversed>
 <li>
 
-[Приложение Reddit - №16](https://github.com/Mikhail39yanov/my-works/tree/master/16 "Приложение NODEjs Timers - №16")
+[Приложение NODEjs Timers - №16](https://github.com/Mikhail39yanov/my-works/tree/master/16 "Приложение NODEjs Timers - №16")
 
 </li>
 <li>
