@@ -3,7 +3,7 @@
 <ol reversed>
 <li>
 
-[Интернет магазин noname - №17](https://mikhail39yanov.github.io/shop-with-goods/ "Интернет магазин noname - №17")
+[Интернет магазин Shop - №17](https://mikhail39yanov.github.io/shop-with-goods/ "Интернет магазин Shop - №17")
 
 </li>
 <li>
