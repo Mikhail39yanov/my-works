@@ -3,6 +3,11 @@
 <ol reversed>
 <li>
 
+[Интернет магазин noname - №17](https://mikhail39yanov.github.io/shop-with-goods/ "Интернет магазин noname - №17")
+
+</li>
+<li>
+
 [Приложение NODEjs Timers - №16](https://github.com/Mikhail39yanov/my-works/tree/master/16 "Приложение NODEjs Timers - №16")
 
 </li>
